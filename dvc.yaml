@@ -1,0 +1,48 @@
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - src/get_data.py
+    - src/load_data.py
+    - data_given/zomato.csv
+    outs:
+    - data/raw/zomato.csv
+
+  preprocess:
+    cmd: python src/preprocess.py --config=params.yaml
+    deps:
+      - src/preprocess.py
+      - data/raw/zomato.csv
+    outs:
+      - data/processed/zomato.csv
+
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+      - src/split_data.py
+      - data/processed/zomato.csv
+    outs:
+      - data/splited/train_zomato.csv
+      - data/splited/test_zomato.csv
+
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+      - data/splited/train_zomato.csv
+      - data/splited/test_zomato.csv
+      - src/train_and_evaluate.py
+    params:
+      - estimators.RandomForestRegressor.params.bootstrap
+      - estimators.RandomForestRegressor.params.max_depth
+      - estimators.RandomForestRegressor.params.max_features
+      - estimators.RandomForestRegressor.params.min_samples_leaf
+      - estimators.RandomForestRegressor.params.min_samples_split
+      - estimators.RandomForestRegressor.params.n_estimators
+    metrics:
+      - report/scores.json:
+          cache: false
+      - report/params.json:
+          cache: false
+    outs:
+      - saved_models/model.joblib
+      - prediction_service/model/model.joblib

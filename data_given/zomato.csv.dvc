@@ -1,0 +1,4 @@
+outs:
+- md5: 1958c9b8893387ebf47b43997e3d304b
+  size: 574071524
+  path: zomato.csv

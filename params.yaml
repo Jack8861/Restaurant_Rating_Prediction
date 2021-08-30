@@ -1,0 +1,37 @@
+base:
+  project: restaurant-rating-prediction
+  random_state: 40
+  target_col: rate
+
+data_source:
+  s3_source: data_given/zomato.csv
+
+load_data:
+  raw_dataset_csv: data/raw/zomato.csv
+
+processed_data:
+  processed_dataset_csv: data/processed/zomato.csv
+
+split_data:
+  train_data: data/splited/train_zomato.csv
+  test_data: data/splited/test_zomato.csv
+  test_size: 0.25
+
+estimators:
+  RandomForestRegressor:
+    params:
+      bootstrap: True
+      max_depth: 10
+      max_features: 'sqrt'
+      min_samples_leaf: 2
+      min_samples_split: 10
+      n_estimators: 1000
+
+
+model_dir: saved_models
+
+reports:
+  params: report/params.json
+  scores: report/scores.json
+
+webapp_model_dir: prediction_service/model/model.joblib

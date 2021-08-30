@@ -1,0 +1,4 @@
+2021-09-11 20:23:40,694 :: INFO :: read_params :: 15 :: Read config file
+2021-09-11 20:23:46,072 :: INFO :: preprocess_data :: 55 :: Starting preprocessing
+2021-09-11 20:23:47,208 :: INFO :: get_processed_df :: 46 :: Completed preprocessing
+2021-09-11 20:23:47,223 :: INFO :: preprocess_data :: 58 :: Saved preprocessed data!

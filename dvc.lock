@@ -1,0 +1,98 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - path: data_given/zomato.csv
+      md5: 1958c9b8893387ebf47b43997e3d304b
+      size: 574071524
+    - path: src/get_data.py
+      md5: 584eb23639559df0f79546a34360278b
+      size: 1093
+    - path: src/load_data.py
+      md5: 613573b2426e017ea88159fe7d7dd453
+      size: 1034
+    outs:
+    - path: data/raw/zomato.csv
+      md5: 77ba6c9aabc1d240b483e560aebbd051
+      size: 574372176
+  preprocess:
+    cmd: python src/preprocess.py --config=params.yaml
+    deps:
+    - path: data/raw/zomato.csv
+      md5: 77ba6c9aabc1d240b483e560aebbd051
+      size: 574372176
+    - path: src/preprocess.py
+      md5: 61e6202ffb7a3a9e317c86c035fefeb3
+      size: 2124
+    outs:
+    - path: data/processed/zomato.csv
+      md5: 7eddb037e20263ddb6694a1b791554a5
+      size: 91844
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/processed/zomato.csv
+      md5: 7eddb037e20263ddb6694a1b791554a5
+      size: 91844
+    - path: src/split_data.py
+      md5: 7585a3b34856d7d6f43d080348f84a96
+      size: 1457
+    outs:
+    - path: data/splited/test_zomato.csv
+      md5: 5810aab269d2d0d4aea89e5c5887c94d
+      size: 23013
+    - path: data/splited/train_zomato.csv
+      md5: b2255d9e51a8dc9c3a07949720d3905a
+      size: 68843
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - path: data/splited/test_zomato.csv
+      md5: 5810aab269d2d0d4aea89e5c5887c94d
+      size: 23013
+    - path: data/splited/train_zomato.csv
+      md5: b2255d9e51a8dc9c3a07949720d3905a
+      size: 68843
+    - path: src/train_and_evaluate.py
+<<<<<<< HEAD
+      md5: 62a643d062a467b2042fe95d5370664e
+      size: 4029
+=======
+      md5: d8af103e58fdefc317c3c1569d8840ab
+      size: 4150
+>>>>>>> af452be... data
+    params:
+      params.yaml:
+        estimators.RandomForestRegressor.params.bootstrap: true
+        estimators.RandomForestRegressor.params.max_depth: 10
+        estimators.RandomForestRegressor.params.max_features: sqrt
+        estimators.RandomForestRegressor.params.min_samples_leaf: 2
+        estimators.RandomForestRegressor.params.min_samples_split: 10
+        estimators.RandomForestRegressor.params.n_estimators: 1000
+    outs:
+    - path: prediction_service/model/model.joblib
+<<<<<<< HEAD
+      md5: fc4e4534105b87d69224f8a9cbf2d43e
+      size: 18725540
+=======
+      md5: 393b1f1e9203098dce1a442fffecbbca
+      size: 18716769
+>>>>>>> af452be... data
+    - path: report/params.json
+      md5: c8a060018d6132dcca6fa0994f6cc1c7
+      size: 163
+    - path: report/scores.json
+<<<<<<< HEAD
+      md5: efb16ce59ebc78990b4694b30ddbc235
+      size: 100
+    - path: saved_models/model.joblib
+      md5: fc4e4534105b87d69224f8a9cbf2d43e
+      size: 18725540
+=======
+      md5: b5ddc64b9386743be1fded75053927c4
+      size: 101
+    - path: saved_models/model.joblib
+      md5: 393b1f1e9203098dce1a442fffecbbca
+      size: 18716769
+>>>>>>> af452be... data

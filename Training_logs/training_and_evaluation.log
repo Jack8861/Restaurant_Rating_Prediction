@@ -1,0 +1,5 @@
+2021-09-11 20:23:53,746 :: INFO :: read_params :: 15 :: Read config file
+2021-09-11 20:23:53,746 :: INFO :: train_and_evaluate :: 44 :: Loading the train and test data
+2021-09-11 20:23:53,746 :: INFO :: train_and_evaluate :: 54 :: Starting training
+2021-09-11 20:23:58,488 :: INFO :: train_and_evaluate :: 67 :: Training complete, got RMSE: 0.33927478638713765, MAE: 0.2012235861641852 ,R2: 0.9537612234809254
+2021-09-11 20:23:59,655 :: INFO :: train_and_evaluate :: 99 :: Saved models!
