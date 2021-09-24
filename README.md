@@ -8,13 +8,29 @@ A Machine Learning webapp.
 - This is a webapp to predict the ratings of restaurants in bangalore.
 - This uses Random Forest Classifier
 
+## Aim / Goal
+
+- This is said to be a intermediate level project in ineuron's internship portal and i wanted to get started with some projects and interships so, i thought of starting with this project.
+
+
+## Skillset
+
+- EDA
+- Data Preprocessing
+- Feature Engineering
+- Model Building and Tuning
+- Python Programming (backend)
+- Web Development
+- AWS Cloud skills (ec2 instances, s3 bucket)
+- Cassandra Database
+- Version control (git, github, dvc)
+
 ## Dataset
 
 - Download the dataset for custom training.
     - https://www.kaggle.com/himanshupoddar/zomato-bangalore-restaurants
 - Download a modified version with a primary key added by me.
     - https://drive.google.com/file/d/1rA3AZcptVCr54B84oW0gtO1igEttmK6r/view?usp=sharing
-
 
 ## Demo
 
@@ -40,7 +56,6 @@ A Machine Learning webapp.
 - dtale
 - DVC
 
-
   
 ## Installation
 
@@ -49,6 +64,8 @@ Requirements
 - Python 3.8
 - Cassandra 3.11
 - Windows or ubuntu 20.04 (preferbly, setup Cassandra on dockers if working on windows)
+
+
 ## Deployment
 
 The Deployment was done on aws ec2 instances.
@@ -212,17 +229,6 @@ You can do the training either on the cloud or on your local system.
 you have to run the files in the src folder one by one, i usually did it on the local system and used dvc to do so.
 
 
-
-
-
-
-
-
-
-
-
-
-
 ## Documentation
 
 - [High Level Documents](https://drive.google.com/file/d/1EAOnpQhf3ap8X5ZOHQGU3NjqJa8umhp7/view?usp=sharing)
@@ -230,12 +236,23 @@ you have to run the files in the src folder one by one, i usually did it on the 
 - [Wireframe](https://drive.google.com/file/d/1gLoHLRzVcfGwWxG5kmx0x4f_U5lHpy_8/view?usp=sharing)
 - [Report](https://docs.google.com/presentation/d/14Pmn4SR93L7fRnGJvNQfJuKAf8PURd94/edit?usp=sharing&ouid=105403021575418724386&rtpof=true&sd=true)
 
-  
+ 
+# Challenges
+
+- Setting up cassandra and successfully using it was a big challenge and i spent about 10 days dealing with the problems i faced... some of the problems were because i developed it on windows at first i didn't know which version to use and how to install and run some of the versions without problems, with running it on remote system and with insertion of bulk data into cassandra.
+- 'Depression', the thing is i spent a lot of time on features engineering and kept trying to come up with as many good features and new-new ideas but while i was doing feature selection and model training, i found out that one of the feature 'votes' was able to give 95% score on its own. Although the other features i made weren't useless on their own, they failed to improve the accuracy beyound 95% and it was very depression as i had put so much time and effort into getting those features. so, initially after i made my model i didn't want to finish the project.
+
+## What i Learnt
+
+- Usage of cassandra DB
+- AWS ec2, s3 bucket (uploading and download data), IAM roles.
+- Usage of DVC, git, github.
+- End to End development.
+- Dockers (to setup cassnadra locally)
+- 
 ## Support
 
 For support, email jackneutron786@gmail.com or contact me on linkedin.
-
-
 
   
 ## Usage
