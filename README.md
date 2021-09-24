@@ -150,7 +150,7 @@ CREATE TABLE if not exists Data.zomato (url text,address text,name text,online_o
 python3
 ```
 
-- Run the below script to upload the data into cassandra deb
+- Run the below script to upload the data into cassandra db
 ```bash
 from cassandra.cluster import Cluster
 import csv
@@ -243,7 +243,7 @@ you have to run the files in the src folder one by one, i usually did it on the 
 ## Challenges
 
 - Setting up cassandra and successfully using it was a big challenge and i spent about 10 days dealing with the problems i faced... some of the problems were because i developed it on windows at first i didn't know which version to use and how to install and run some of the versions without problems, with running it on remote system and with insertion of bulk data into cassandra.
-- 'Depression', the thing is i spent a lot of time on features engineering and kept trying to come up with as many good features and new-new ideas but while i was doing feature selection and model training, i found out that one of the feature 'votes' was able to give 95% score on its own. Although the other features i made weren't useless on their own, they failed to improve the accuracy beyound 95% and it was very depression as i had put so much time and effort into getting those features. so, initially after i made my model i didn't want to finish the project.
+- I spent a lot of time on features engineering and kept trying to come up with as many good features and new-new ideas but while i was doing feature selection and model training, i found out that one of the feature 'votes' was able to give 95% score on its own. Although the other features i made weren't useless on their own, they failed to improve the accuracy beyound 95% and it was very depressing as i had put so much time and effort into getting those features. so, initially after i made my model i didn't want to finish the project.
 
 ## What i Learnt
 
