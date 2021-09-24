@@ -76,7 +76,9 @@ What you need to do:
 - setup the webapp and run it. 
 
 ### Setting up the database
-(Note: use 4GB of memory for a every instance you create to act as a node or cassnadra will stop right after it starts)
+(Note: use 4GB of memory for a every instance you create to act as a node or cassnadra will stop right after it starts
+And for the webapp use t2 small (2GB) memory if you intend to train it remotely)
+
 
 - First install java
 
