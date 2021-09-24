@@ -76,8 +76,7 @@ What you need to do:
 - setup the webapp and run it. 
 
 ### Setting up the database
-(Note: use 4GB of memory for a every instance you create to act as a node or cassnadra will stop right after it starts
-And for the webapp use t2 small (2GB) memory if you intend to train it remotely)
+(Note: use 4GB of memory for a every instance you create to act as a node or cassnadra will stop right after it starts.)
 
 
 - First install java
@@ -205,6 +204,8 @@ aws s3 cp export.zip s3://UniqueBucketName
 ### Setting up the webapp
 first upload your files to the instance.
 Then, fullfill the requirements.
+
+(Note: Use t2 small (2GB) memory if you intend to train it remotely)
 
 - Do the installations:
 ```bash
