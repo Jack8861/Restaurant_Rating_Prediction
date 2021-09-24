@@ -1,0 +1,56 @@
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.img-fluid
+{
+  height: 400px;
+  width: 80%;
+}
+.bg-black  { background-color: var(--black) }
+.bg-gray   { background-color: var(--gray) }
+.bg-silver { background-color: var(--silver) }
+.bg-white  { background-color: var(--white) }
+
+.bg-aqua  { background-color: var(--aqua) }
+.bg-blue  { background-color: var(--blue) }
+.bg-navy  { background-color: var(--navy) }
+.bg-teal  { background-color: var(--teal) }
+.bg-green { background-color: var(--green) }
+.bg-olive { background-color: var(--olive) }
+.bg-lime  { background-color: var(--lime) }
+
+.bg-yellow  { background-color: var(--yellow) }
+.bg-orange  { background-color: var(--orange) }
+.bg-red     { background-color: var(--red) }
+.bg-fuchsia { background-color: var(--fuchsia) }
+.bg-purple  { background-color: var(--purple) }
+.bg-maroon  { background-color: var(--maroon) }
+
+.bg-darken-1 { background-color: var(--darken-1) }
+.bg-darken-2 { background-color: var(--darken-2) }
+.bg-darken-3 { background-color: var(--darken-3) }
+.bg-darken-4 { background-color: var(--darken-4) }
+
+.bg-lighten-1 { background-color: var(--lighten-1) }
+.bg-lighten-2 { background-color: var(--lighten-2) }
+.bg-lighten-3 { background-color: var(--lighten-3) }
+.bg-lighten-4 { background-color: var(--lighten-4) }
+
+
+.custom-toggler.navbar-toggler {
+    border-color: white;
+}
+
+.custom-toggler .navbar-toggler-icon {
+            background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 128, 0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }

@@ -4,9 +4,10 @@ from get_data import read_params
 import re
 import argparse
 import logging
+import os
 
 logging.basicConfig(format='%(asctime)s :: %(levelname)s :: %(funcName)s :: %(lineno)d \
-:: %(message)s', level=logging.INFO, filename='Training_logs/preprocess_data.log', filemode='w')
+:: %(message)s', level=logging.INFO, filename=os.path.join('..', 'Training_logs','preprocess_data.log'), filemode='w')
 
 
 def clean_rating(row):  # get the numeric values
@@ -49,8 +50,8 @@ def get_processed_df(df):
 
 def preprocess_data(config_path):
     config = read_params(config_path)
-    raw_data_path = config["load_data"]["raw_dataset_csv"]
-    processed_data_path = config["processed_data"]["processed_dataset_csv"]
+    raw_data_path = os.path.join('..', config["load_data"]["raw_dataset_csv"])
+    processed_data_path = os.path.join('..', config["processed_data"]["processed_dataset_csv"])
     df = pd.read_csv(raw_data_path, sep=",")
     logging.info("Starting preprocessing")
     new_df = get_processed_df(df)
@@ -61,6 +62,6 @@ def preprocess_data(config_path):
 
 if __name__ == "__main__":
     args = argparse.ArgumentParser()
-    args.add_argument("--config", default="params.yaml")
+    args.add_argument("--config", default=os.path.join('..', "params.yaml"))
     parsed_args = args.parse_args()
     preprocess_data(config_path=parsed_args.config)

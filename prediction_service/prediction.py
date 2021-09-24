@@ -40,7 +40,7 @@ def predict(data):
     prediction = model.predict(data).tolist()[0]
     try:
         if 0 <= prediction <= 5:
-            return prediction
+            return np.round(prediction,1)
         else:
             raise NotInRange
     except NotInRange:

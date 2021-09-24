@@ -25,7 +25,7 @@ def get_data(config_path):
     """
     try:
         config = read_params(config_path)
-        data_path = config["data_source"]["s3_source"]
+        data_path = os.path.join("..",config["data_source"]["s3_source"])
         df = pd.read_csv(data_path, sep="|", encoding='utf-8')
         logging.info("Extracted data from csv file")
     except Exception as e:
@@ -36,6 +36,6 @@ def get_data(config_path):
 
 if __name__ == "__main__":
     args = argparse.ArgumentParser()
-    args.add_argument("--config", default="params.yaml")
+    args.add_argument("--config", default=os.path.join("..", "params.yaml"))
     parsed_args = args.parse_args()
     data = get_data(config_path=parsed_args.config)

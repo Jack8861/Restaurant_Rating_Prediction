@@ -1,4 +1,4 @@
-2021-09-11 20:23:13,855 :: INFO :: read_params :: 15 :: Read config file
-2021-09-11 20:23:13,871 :: INFO :: read_params :: 15 :: Read config file
-2021-09-11 20:23:21,116 :: INFO :: get_data :: 30 :: Extracted data from csv file
-2021-09-11 20:23:36,829 :: INFO :: load_and_save :: 18 :: Cleaned csv file
+2021-09-24 14:47:16,199 :: INFO :: read_params :: 15 :: Read config file
+2021-09-24 14:47:16,215 :: INFO :: read_params :: 15 :: Read config file
+2021-09-24 14:47:28,506 :: INFO :: get_data :: 30 :: Extracted data from csv file
+2021-09-24 14:48:02,347 :: INFO :: load_and_save :: 20 :: Cleaned csv file

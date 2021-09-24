@@ -10,7 +10,7 @@ import json
 import logging
 
 logging.basicConfig(format='%(asctime)s :: %(levelname)s :: %(funcName)s :: %(lineno)d \
-:: %(message)s', level=logging.INFO, filename='Training_logs/training_and_evaluation.log', filemode='w')
+:: %(message)s', level=logging.INFO, filename=os.path.join('..', 'Training_logs/training_and_evaluation.log'), filemode='w')
 
 def eval_metrics(actual, pred):
     """
@@ -27,11 +27,10 @@ def train_and_evaluate(config_path):
         split the data and save it
     """
     config = read_params(config_path)
-    test_data_path = config["split_data"]["test_data"]
-    train_data_path = config["split_data"]["train_data"]
-    random_state = config["base"]["random_state"]
-    model_dir = config["model_dir"]
-    webapp_model_dir = config["webapp_model_dir"]
+    test_data_path = os.path.join('..', config["split_data"]["test_data"])
+    train_data_path = os.path.join('..', config["split_data"]["train_data"])
+    model_dir = os.path.join('..', config["model_dir"])
+    webapp_model_dir = os.path.join('..', config["webapp_model_dir"])
 
     bootstrap = config["estimators"]["RandomForestRegressor"]["params"]["bootstrap"]
     max_depth = config["estimators"]["RandomForestRegressor"]["params"]["max_depth"]
@@ -39,6 +38,7 @@ def train_and_evaluate(config_path):
     min_samples_leaf = config["estimators"]["RandomForestRegressor"]["params"]["min_samples_leaf"]
     min_samples_split = config["estimators"]["RandomForestRegressor"]["params"]["min_samples_split"]
     n_estimators = config["estimators"]["RandomForestRegressor"]["params"]["n_estimators"]
+    random_state = config["base"]["random_state"]
     target = [config["base"]["target_col"]]
 
     logging.info("Loading the train and test data")
@@ -69,8 +69,8 @@ def train_and_evaluate(config_path):
     print("Got RMSE:%s, MAE:%s ,R2:%s" % (rmse, mae, r2))
 
     #####################################################
-    scores_file = config["reports"]["scores"]
-    params_file = config["reports"]["params"]
+    scores_file = os.path.join("..", config["reports"]["scores"])
+    params_file = os.path.join("..", config["reports"]["params"])
 
     with open(scores_file, "w") as f:
         scores = {
@@ -96,15 +96,12 @@ def train_and_evaluate(config_path):
     model_path = os.path.join(model_dir, "model.joblib")
     joblib.dump(lr, model_path)
     joblib.dump(lr, webapp_model_dir)
-<<<<<<< HEAD
-    logging.info("Saved models!")
-=======
->>>>>>> af452be... data
+
 
 
 
 if __name__ == "__main__":
     args = argparse.ArgumentParser()
-    args.add_argument("--config", default="params.yaml")
+    args.add_argument("--config", default=os.path.join("..", "params.yaml"))
     parsed_args = args.parse_args()
     train_and_evaluate(config_path=parsed_args.config)

@@ -1,3 +1,3 @@
-2021-09-11 20:23:50,819 :: INFO :: read_params :: 15 :: Read config file
-2021-09-11 20:23:50,835 :: INFO :: split_and_saved_data :: 22 :: Splitting data into train and test sets
-2021-09-11 20:23:50,866 :: INFO :: split_and_saved_data :: 30 :: Data split successful
+2021-09-24 14:54:09,366 :: INFO :: read_params :: 15 :: Read config file
+2021-09-24 14:54:09,366 :: INFO :: split_and_saved_data :: 23 :: Splitting data into train and test sets
+2021-09-24 14:54:09,444 :: INFO :: split_and_saved_data :: 31 :: Data split successful

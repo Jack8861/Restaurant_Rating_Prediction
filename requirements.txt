@@ -12,3 +12,4 @@ cassandra-driver~=3.25.0
 pytest
 tox
 flake8
+gunicorn
